@@ -527,7 +527,7 @@ html,body {
 	border-radius: 75px;
 	background: rgba(255,255,255,.4) url(../resource_imgs/indexpics/clockBg.png) no-repeat;
 
-	position: absolute;
+	position: fixed;
 
 	top: 30px;
 	right: 30px;
