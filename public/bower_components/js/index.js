@@ -16,6 +16,9 @@ $(document).ready(function(){
 	    	args.pics = document.getElementById('slidepics');
 	    	//歌名数组
 	    	args.songs = ['晚安喵','北京巷弄','菊次郎的夏天','爱滴歌'];
+	    	//时钟
+            args.canCon = document.getElementById("canvas");
+            args.can = document.getElementById("clock");
 	    	window['args'] = args;
 	    }());
 	    
@@ -180,5 +183,148 @@ $(document).ready(function(){
 	   	//模块化自定义滚动条项目
 	   	libo.totalDrag($('#slidepics .slidebar'),$('#slidepics .bar'),$('#lipics'),$('#slidepics .pic-container'));  //dragParent,dragObj,scrollObj,scrollParent
 
+
+    //画时钟模块
+    (function(){
+        if(args.can==null){
+            //your browser do not support canvas
+        }else{
+            var ctx=args.can.getContext("2d");
+            var w=args.can.width;
+            var h=args.can.height;
+            var r=w/2||h/2;
+            //按照比例缩放
+            var scale=w/200;
+            //drawClock
+            function draw(){
+                var date=new Date();
+                ctx.clearRect(0,0,w,h);
+                var hour=date.getHours();
+                var minute=date.getMinutes();
+                var second=date.getSeconds();
+                drawBg();
+                drawAllPoint();
+                drawHour(hour,minute);
+                drawMinute(minute);
+                drawSecond(second);
+                drawPoint();
+                ctx.restore();
+            }
+            draw();
+            //定时
+            setInterval(draw,1000);
+            //drawBackground
+            function drawBg(){
+                ctx.save();			//将之前的环境保存下来
+                ctx.translate(r,r);
+                ctx.beginPath();
+                ctx.fillStyle="transparent";
+                ctx.arc(0,0,r,0,2*Math.PI,false);
+                ctx.fill();
+                ctx.closePath();
+            }
+            //drawAllPoints
+            function drawAllPoint(){
+                var rad;
+                var x;
+                var y;
+                ctx.fillStyle="black";
+                for(var i=0;i<60;i++){
+                    rad=2*Math.PI /60 *i;
+                    x=Math.cos(rad) * (r-5*scale);
+                    y=-Math.sin(rad) * (r-5*scale);
+                    ctx.beginPath();
+                    if(i%5==0){
+                        ctx.arc(x,y,4*scale,0,2*Math.PI,false);
+                        ctx.closePath();
+                        ctx.fill();
+                    }else{
+                        ctx.arc(x,y,2*scale,0,2*Math.PI,false);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+
+                }
+            }
+            function drawHour(hour,minute){
+                var rad=2 *Math.PI/ 12 *hour;
+                var mrad=2 *Math.PI/ 12 /60 *minute;
+                ctx.save();
+                ctx.rotate(rad+mrad);
+                ctx.beginPath();
+                ctx.lineWidth=5*scale;
+                ctx.lineCap="round";	//设置笔触
+                ctx.moveTo(0,10*scale);
+                ctx.lineTo(0,-r/2);
+                ctx.stroke();
+                ctx.closePath();
+                ctx.restore();
+            }
+            function drawMinute(minute){
+                var mrad=2 *Math.PI/ 60 *minute;
+                ctx.save();
+                ctx.rotate(mrad);
+                ctx.beginPath();
+                ctx.lineWidth=3*scale;
+                ctx.moveTo(0,10*scale);
+                ctx.lineTo(0,-r+20*scale);
+                ctx.stroke();
+                ctx.closePath();
+                ctx.restore();
+            }
+            function drawSecond(second){
+                var srad=2 *Math.PI/ 60 *second;
+                ctx.save();
+                ctx.rotate(srad);
+                ctx.beginPath();
+                ctx.fillStyle="red";
+                ctx.moveTo(2*scale,10*scale);
+                ctx.lineTo(-2*scale,10*scale);
+                ctx.lineTo(-1*scale,-r+10*scale);
+                ctx.lineTo(1*scale,-r+10*scale);
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+            function drawPoint(){
+                ctx.beginPath();
+                ctx.fillStyle="#B4B4BC";
+                ctx.arc(0,0,2*scale,0,2 * Math.PI,false);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+    }());
+    //对钟表用一个弹性拖动运动
+    (function(){
+        args.canCon.onmousedown=function(e){
+            var oE=e||window.event;
+            //鼠标距离自身边界的位置
+            var canX=oE.clientX-this.offsetLeft;
+            var canY=oE.clientY-this.offsetTop;
+            // document.title=canX+" "+canY;
+            document.onmousemove=function(e){
+                var oE=e||window.event;
+                var l=oE.clientX-canX;
+                var t=oE.clientY-canY;
+                if(l<0){
+                    l=0;
+                }else if(l>args.container.offsetWidth-args.canCon.offsetWidth){
+                    l=args.container.offsetWidth-args.canCon.offsetWidth
+                }
+                if(t<0){
+                    t=0;
+                }else if(t>args.container.offsetHeight-args.canCon.offsetHeight){
+                    t=args.container.offsetHeight-args.canCon.offsetHeight
+                }
+                libo.css(args.canCon,"left",l);
+                libo.css(args.canCon,"top",t);
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmouseup=null;
+            }
+        }
+    }());
 
 });
