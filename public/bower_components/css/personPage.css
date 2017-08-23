@@ -1,0 +1,91 @@
+/*================先预设HTML和body的长宽===================*/
+html,body {
+	width: 100%;
+	height: 100%;
+	font-family: "微软雅黑",Arial,lato, ostritch, Verdana, sans-serif;
+}
+img{
+	border: none;
+}
+a{display: block;color: #fff;}
+a:hover{text-decoration: none;color: #fff;}
+a:link{text-decoration: none;color: #fff;}
+a:active{text-decoration: none;color: #fff;}
+a:visited{text-decoration: none;color: #fff;}
+/*================设置首部导航=================*/
+#header {
+	width: 100%;
+	height: 50px;
+	background-color: #333333;
+	position: relative;
+	z-index: 1;
+}
+
+header{
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+}
+header .logo{
+  display: inline-block;
+  width: 250px;
+  height: 100%;
+  float: left;
+}
+header .logo img{width: 100%;}
+header .links{
+  height: 50px;
+  line-height: 50px;
+  float: right;
+}
+header .links li{
+	height: 100%;
+	display: inline-block;
+}
+header .links li a{
+	height: 100%;
+	display: inline-block;
+	padding: 0 20px;
+	font-size: 16px;
+}
+header .links li a:hover{
+	background-color: black;
+	text-decoration: none;color: #DAC032;
+}
+
+
+
+
+/*==================================设置banner部分==========================*/
+#banner {
+	position: relative;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	margin-top: -50px;
+	padding-top: 50px;
+    background: url(../resource_imgs/personpage/bg.jpg) no-repeat;
+	/*===============巧妙的设置了页面不会自己出现滚动条,而且布局优美===========*/
+    /*============背景设置=============*/
+    background-position: 0 50px;
+    background-size: 100% auto;
+    color: #fff;
+}
+
+#banner .sign{
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: 50%;
+	text-align: center;
+}
+#banner h1{
+   font-size: 42px;
+   font-family: "微软雅黑",Arial,lato, ostritch, Verdana, sans-serif;
+   font-weight: normal;
+   text-align: center;
+}
+#banner h1 .char{
+	color: #2493B2;
+}

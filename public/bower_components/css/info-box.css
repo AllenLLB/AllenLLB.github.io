@@ -1,0 +1,97 @@
+/*
+ * Component: Info Box
+ * -------------------
+ */
+.info-box {
+    display: block;
+    min-height: 90px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin-bottom: 15px;
+
+  /*设置父级的定位*/
+  position: relative;
+}
+.info-box .info-operate {
+  position: absolute !important;
+  bottom: 3px;
+  right: 6px;
+  overflow: hidden;
+}
+.info-box .info-sign {
+  position: absolute !important;
+  left: 8px;
+  top: 8px;
+}
+.info-box small {
+    font-size: 14px;
+}
+.info-box .progress {
+    background: rgba(0, 0, 0, 0.2);
+    margin: 5px -10px 5px -10px;
+    height: 2px;
+}
+.info-box .progress,
+.info-box .progress .progress-bar {
+    border-radius: 0;
+}
+.info-box .progress .progress-bar {
+    background: #fff;
+}
+.info-box .linex {
+    background: rgba(255, 255, 255, 0.8);
+    margin: 5px -10px 5px -10px;
+    height: 2px;
+}
+.info-box-icon {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+    font-size: 45px;
+    line-height: 90px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.info-box-icon > img {
+    max-width: 100%;
+}
+.info-box-content {
+    padding: 5px 10px;
+    margin-left: 90px;
+}
+.info-box-number {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+}
+.info-box-title {
+    display: block;
+//    font-weight: bold;
+    font-size: 18px;
+}
+.description,
+.progress-description,
+.info-box-text {
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.info-box-text {
+    text-transform: uppercase;
+}
+.info-box-more {
+    display: block;
+}
+.description,
+.progress-description {
+    margin: 0;
+}

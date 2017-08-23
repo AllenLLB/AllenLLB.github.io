@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>MyWeb</title>
+	<link rel="stylesheet" type="text/css" href="../bower_components/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../bower_components/css/aboutme.css" />
+	<script type="text/javascript" src="../bower_components/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../bower_components/jquery/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../bower_components/jquery/handlebars-v4.0.5.js"></script>
+	<script type="text/javascript" src="../bower_components/js/Animate.js"></script>
+	<script type="text/javascript" src="../bower_components/js/aboutme.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBzE9xAESye6Kde-3hT-6B90nfwUkcS8Yw&sensor=false">
+    </script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div id="header">
+		<header>
+			<a href="/personPage" class="logo">
+			  <img src="../bower_components/resource_imgs/personpage/logo.png" alt="logo">
+			</a>
+			<ul class="links list-unstyled">
+				<li><a href="/aboutsite">关于网站</a></li>
+				<li><a href="/aboutme">关于我</a></li>
+			</ul>
+		</header>
+	</div>
+	<div id="container">
+		<h1 class="row">飞燕草</h1>
+		<div class="row">
+		    <div href="#" class="thumbnail photo pull-left">
+	          <img src="../bower_components/resource_imgs/personpage/photo.png" alt="logo">
+	        </div>
+		    <div class="info pull-right">
+		      <h4>我是刘立博，是一名就读于江苏科技大学信息管理与信息系统专业的学生。同时学习WEB前端开发，目标是毕业以后成为一名WEB前端工程师。就读时间(2014.9-2018.6)</h4>
+		      <p>虽然没有参加过实际工作但是平时的练习没有停止，主要使用html,css,javascript,jquery等前端技术进行虚拟网站项目的编写。目前你正在看的这个就是<a href="/index">我的个人网站</a>的个人介绍部分。</p>
+		      <p>平时除了前端开发的学习还在增强后端的知识，在自己的网站中应用前后端以及数据库知识进行维护。设计的每一个虚拟的网站都注重细节的开发。</p>
+		      <p>2015年10月份开始学习前端开发，一路上走来设计美感有所增强，知识也比之前的有所增长。学习前端的热情也是生活的动力。</p>
+		    </div> 
+		</div>
+		<ul class="list-unstyled row mapInfo">
+			<li class="map" style="width:730px;height:400px;" id="map"></li>
+			<li class="contact">
+			    <h4 class="text-center">联系我</h4>
+				<ul>
+					<li title="1279276451@qq.com">邮箱</li>
+					<li title="AllenLLB">博客园</li>
+					<li title="AllenLLB">github</li>
+					<li title="18252581787">电话</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<footer>
+		<ul class="list-unstyled">
+			<li>
+			  <a href="https://github.com/AllenLLB"><img src="../bower_components/resource_imgs/personpage/github.png" /></a>
+			</li>
+			<li> 
+              <a href="http://www.cnblogs.com/allenllb/"><img src="../bower_components/resource_imgs/personpage/blog.png" /></a>
+			</li>
+		</ul>
+		<p>&copy2017 by AllenLLB</p>
+	</footer>
+
+
+
+	<!-- 单独写地图 -->
+	<script type="text/javascript">
+		function init(){
+		  var center1 = new google.maps.LatLng(32.1821079147,119.42922428309998);
+		  var mapProp = {
+		    center: center1,
+		    zoom: 5,
+		    mapTypeId: google.maps.MapTypeId.ROADMAP
+		  };
+		  var map = new google.maps.Map(document.getElementById("map"), mapProp);
+		  //添加标记一定得放在地图渲染的后面
+		  var marker1=new google.maps.Marker({
+		    position:center1
+		    });
+		  marker1.setMap(map);
+		  var infowindow = new google.maps.InfoWindow({
+		    content:"Hello 我在镇江"
+		  });
+		   
+		  infowindow.open(map,marker1);
+		}
+		google.maps.event.addDomListener(window, 'load', init);
+	</script>
+</body>

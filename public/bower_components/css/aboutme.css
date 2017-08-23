@@ -1,0 +1,93 @@
+@import url(personPage.css);
+
+/*====================应用之前的页面来设置头部，下面进行自己的页面设置============*/
+
+/*==================增加补充header的顶部锁定==================*/
+#header{position: fixed;}
+#container{
+	width: 1200px;
+	height: 1000px;
+	margin: 0 auto;
+	padding-top: 60px;
+}
+#container h1{
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 25px;
+	margin-bottom: 45px;
+}
+
+#container .photo{
+
+}
+#container .info{
+  width: 900px;
+}
+#container .info h4{
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+#container .info p{
+	margin-top: 15px;
+}
+
+
+/*=======================个人介绍主页的介绍=========================*/
+#container a{
+	display: inline;
+	color: #3BB0D4;
+}
+
+
+/*=======================设置下面的地图定位,个人链接介绍=================*/
+#container .mapInfo{
+	/*清除浮动*/
+	height: auto;
+	clear: both;
+	margin-top: 50px;
+}
+#container .mapInfo li.map{
+	float: left;
+}
+
+
+
+/*=========设置联系列表======*/
+#container .mapInfo li.contact{
+    float: right;
+    width: 360px;
+    height: 200px;
+    background-color: #ddd;
+    margin-top: 100px;
+}
+#container .mapInfo .contact h4{
+	font-size: 16px;
+	font-weight: 600;
+	word-spacing: 30px;
+}
+#container .mapInfo .contact li{
+    padding: 10px 0;
+    color: #3BB0D4;
+}
+
+
+/*=============设置尾部的信息=============*/
+
+footer {
+	width: 1200px;
+	margin: 0 auto;
+	background: transparent;
+
+	clear: both;
+}
+footer ul{
+	text-align: center;
+}
+footer li{
+	background-color: #ccc;
+	display: inline-block;
+	margin-left: 15px;
+}
+footer p{
+	text-align: center;
+}

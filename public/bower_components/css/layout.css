@@ -1,0 +1,30 @@
+.v-box {
+    display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	-ms-flex-direction:column;
+	flex-direction:column !important;
+	overflow-y:hidden;
+}
+
+.h-box {
+    display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	-ms-flex-direction:row;
+	flex-direction:row !important;
+	overflow-x:hidden;
+}
+
+.middle {
+    align-items: center !important;
+}
+
+.full {
+    flex: 1 1 auto;
+    overflow: auto;
+}

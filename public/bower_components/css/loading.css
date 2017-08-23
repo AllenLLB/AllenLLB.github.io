@@ -1,0 +1,77 @@
+@import url(reset.css);
+/*================先预设HTML和body的长宽===================*/
+html,body {
+	width: 100%;
+	height: 100%;
+	font-family: "微软雅黑",Arial,lato, ostritch, Verdana, sans-serif;
+}
+img{
+	border: none;
+}
+a{display: block;color: #fff;}
+a:hover{text-decoration: none;color: #fff;}
+a:link{text-decoration: none;color: #fff;}
+a:active{text-decoration: none;color: #fff;}
+a:visited{text-decoration: none;color: #fff;}
+
+/*=========设置整体框架==========*/
+body{
+	background: #000;
+}
+
+#container{
+	width: 1280px;
+	height: 670px;
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+	margin-left: -640px;
+	margin-top: -335px;
+	background: #000;
+}
+
+/*=============设置四个区块的样式==============*/
+#container .top{
+  width: 470px;
+  height: 230px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -235px;
+  background: url(../resource_imgs/loading/haut2.png) repeat-x;
+}
+#container .face{  /*===就是最大的那个===*/
+  width: 100%;
+  height: 580px;
+
+  position: absolute;
+  background: url(../resource_imgs/loading/haut1.png) no-repeat,
+  url(../resource_imgs/loading/cote.png) repeat-y center 277px;
+}
+#container .bas{
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  background: url(../resource_imgs/loading/bas.png) no-repeat;
+}
+#container .show{
+  width: 450px;
+  height: 310px;
+  position: absolute;
+  top: 230px;
+  left: 50%;
+  margin-left: -225px;
+  background: url(../resource_imgs/loading/timg1.gif) no-repeat  -65px -30px;
+}
+
+/*==============自定义的进度条==============*/
+#container .pro{
+	width: 0;
+	height: 14px;
+	background: #5D080F;
+	position: absolute;
+	top: 540px;
+	left: 415px;
+}

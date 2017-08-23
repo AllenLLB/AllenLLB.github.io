@@ -1,0 +1,9 @@
+#main {
+	margin: 0;
+	width: 100%;
+	position: relative;
+}
+li{
+	padding: 8px;
+	float: left;
+}

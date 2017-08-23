@@ -1,0 +1,112 @@
+@import url(personPage.css);
+
+/*====================应用之前的页面来设置头部，下面进行自己的页面设置============*/
+
+/*==================增加补充header的顶部锁定==================*/
+#header{position: fixed;}
+
+/*=============设置网页中间的主要的部分============*/
+#container{
+   /*===========先去除bug=============*/
+   padding-top: 60px;
+}
+
+#title{
+	width: 1200px;
+	height: 370px;
+	margin: 15px auto;
+}
+/*=========介绍部分的图片和文字===========*/
+#title .img{
+	width: 750px;
+	height: 370px;
+	float: left;
+}
+#title img{
+	width: 100%;
+	height: 100%;
+}
+
+#title .introduce{
+	width: 400px;
+	height: 370px;
+	float: right;
+	margin-top: 60px;
+}
+#title .introduce h4{
+	font-weight: 600;
+}
+#title .introduce a{
+	display: inline;
+	color: #3BB0D4;
+}
+
+
+
+/*=================关于例子介绍=============*/
+#example{
+	width: 1200px;
+	height: 499px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+/*=========例子部分的图片和文字===========*/
+#example .img{
+	width: 750px;
+	height: 499px;
+	float: left;
+}
+#example img{
+	width: 100%;
+	height: 100%;
+}
+
+#example .introduce{
+	width: 400px;
+	height: 370px;
+	float: right;
+	margin-top: 150px;
+}
+#example .introduce h4{
+	font-weight: 600;
+}
+#example .introduce a{
+	display: inline;
+	color: #3BB0D4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=============设置尾部的信息=============*/
+
+footer {
+	width: 1200px;
+	margin: 0 auto;
+	background: transparent;
+
+	clear: both;
+}
+footer ul{
+	text-align: center;
+}
+footer li{
+	background-color: #ccc;
+	display: inline-block;
+	margin-left: 15px;
+}
+footer p{
+	text-align: center;
+}

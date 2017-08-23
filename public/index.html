@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>MyWeb</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="bower_components/css/index.css" />
+	<script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../bower_components/jquery/handlebars-v4.0.5.js"></script>
+	<script type="text/javascript" src="bower_components/js/Animate.js"></script>
+	<script type="text/javascript" src="bower_components/js/index.js"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div id="container">
+		<div id="home" class="col-md-6 col-md-offset-3 text-center h1">Best Wishes To You!</div>
+		<a id="follow-me" class="col-md-6 col-md-offset-3 text-center" href="/personPage">跟着我了解我</a>
+		<div class="add about_me_hide">
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+		</div>
+		<div id="layer">
+			<div id="projects" class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
+				<h2 class="text-center">Share&nbsp&nbsp&nbsp&nbspMyWeb</h2>
+				<h5 class="text-center">多彩的网页作品墙</h5>
+				<hr>
+				<ul class="list-unstyled">
+					<li>
+						<a class="img-circle text-center" href="/picWall">1</a>
+						<span class="text-center">瀑布流</span>
+					</li>
+					<li>
+						<a class="img-circle text-center" href="/personPage">2</a>
+						<span class="text-center">个人网站</span>
+					</li>
+					<li>
+						<a class="img-circle text-center" href="/wuxia">3</a>
+						<span class="text-center">武侠照片墙</span>
+					</li>
+					<li>
+						<a class="img-circle text-center" href="/picWall">4</a>
+						<span class="text-center">照片墙</span>
+					</li>
+					<li>
+						<a class="img-circle text-center" href="/picWall">5</a>
+						<span class="text-center">照片墙</span>
+					</li>
+					<li>
+						<a class="img-circle text-center" href="/picWall">6</a>
+						<span class="text-center">照片墙</span>
+					</li>
+				</ul>
+			</div>
+			
+			<button class="closeLayer img-circle">
+				<span>×</span>
+			</button>
+		</div>
+		<div id="box-foot" class="col-md-12 col-lg-12 about_me_hide">
+			<ul class="list-unstyled col-md-5 col-lg-5">
+				<li class="pull-left pics" title="最近痴迷的小照片">
+					<span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+				</li>
+				<li class="pull-left music" title="listening music">
+					<span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+				</li>
+				<li class="pull-left" title="作者力推值得收藏的学习站点">
+					<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+				</li>
+				<li class="pull-left tips" title="作者近日活动">
+					<span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+				</li>
+			</ul>
+		</div>
+
+		<!--主页弹出页面的音乐部分-->
+		<div id="music" class="col-lg-4 col-md-4">
+			<audio controls="controls" src="bower_components/mp3/菊次郎的夏天.mp3">
+			  Your browser does not support this audio format.
+			</audio>
+			<ul class="list-unstyled col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+				<li class="col-md-1 col-lg-1">
+					<span class="glyphicon glyphicon-music"></span>
+				</li>
+				<li class="col-md-1 col-lg-1 col-md-offset-1 col-lg-offset-1">
+					<span class="glyphicon glyphicon-step-backward cursor pre"></span>
+				</li>
+				<li class="col-md-1 col-lg-1">
+					<span class="glyphicon glyphicon-pause hidden cursor pause"></span>
+					<span class="glyphicon glyphicon-play cursor restart"></span>
+				</li>
+				<li class="col-md-1 col-lg-1">
+					<span class="glyphicon glyphicon-step-forward cursor next"></span>
+				</li>
+				<li class="col-md-1 col-lg-1 col-md-offset-4 col-lg-offset-4">
+					<span class="glyphicon glyphicon-remove cursor remove"></span>
+				</li>
+			</ul>
+			<p class="col-md-12 col-lg-12 text-center"></p>
+		</div>
+
+		<!--主页弹出部分的作者近日活动页面-->
+        <div id="tips"> 
+          <div class="tip-header"> 
+            <span class="glyphicon glyphicon-leaf span"></span>
+            <span class="span">&nbsp&nbsp&nbsp作者近日活动</span>
+            <span class="glyphicon glyphicon-minus min span"></span>
+          </div>
+          <ul class="navs list-unstyled"> 
+            <li class="top">top</li>
+            <li class="music"><span class="glyphicon glyphicon-headphones"></span></li>
+            <li class="IT"><span class="glyphicon glyphicon-cloud"></span></li>
+            <li class="sport"><span class="glyphicon glyphicon-sunglasses"></span></li>
+            <li class="game"><span class="glyphicon glyphicon-blackboard"></span></li>
+          </ul>
+          <div id="tips-container"> 
+            <ul class="top"> 
+              <li>
+                <a href="/personpage"><span class="glyphicon glyphicon-leaf"></span><span class="head3">MyWeb2.0</span></a>
+                <p>听说作者的网站2.0版本出来了，增加了不少新的功能，赶紧去瞧瞧吧</p>
+              </li>
+              <li>
+                <a href="/wuxia"><span class="glyphicon glyphicon-leaf"></span><span class="head3">公子羽主题展</span></a>
+                <p>233公子羽又晒他们家的新迷照了，快去瞧瞧！</p>
+              </li>
+              <li>
+                <a href="/index"><span class="glyphicon glyphicon-leaf"></span><span class="head3">sdadada</span></a>
+                <p>sadadad</p>
+              </li>
+              <li>
+                <a href="/personpage"><span class="glyphicon glyphicon-leaf"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+            </ul>
+            <ul class="music nosee"> 
+              <li>
+                <a><span class="glyphicon glyphicon-headphones"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+              <li>
+                <a><span class="glyphicon glyphicon-headphones"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+            </ul>
+            <ul class="IT nosee"> 
+              <li>
+                <a href="/picwall"><span class="glyphicon glyphicon-cloud"></span><span class="head3">瀑布流布局的照片墙</span></a>
+                <p>一个使用了瀑布流进行布局的照片，有帅帅的照片</p>
+              </li>
+              <li>
+                <a><span class="glyphicon glyphicon-cloud"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+              <li>
+                <a><span class="glyphicon glyphicon-cloud"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+            </ul>
+            <ul class="sport nosee"> 
+              <li>
+                <a><span class="glyphicon glyphicon-sunglasses"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+              <li>
+                <a><span class="glyphicon glyphicon-sunglasses"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+              <li>
+                <a><span class="glyphicon glyphicon-sunglasses"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+            </ul>
+            <ul class="game nosee"> 
+              <li>
+                <a><span class="glyphicon glyphicon-blackboard"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+              <li>
+                <a><span class="glyphicon glyphicon-blackboard"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+              <li>
+                <a><span class="glyphicon glyphicon-blackboard"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+              <li>
+                <a><span class="glyphicon glyphicon-blackboard"></span><span class="head3">123456abc</span></a>
+                <p>123456789abcdefghijklmnopqres</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+		<!--主页弹出的作者最近的小迷照-->
+        <div id="slidepics" class="nosee">
+          <span class="glyphicon glyphicon-remove no"></span>
+          <div class="head">
+              <span class="glyphicon glyphicon-picture pic"></span>
+              <span class="library">Pictures Library</span>
+          </div>
+          <div class="pic-container">
+            <ul id="lipics">
+              <li><img src="bower_components/resource_imgs/indexpics/pic1.png" /></li>
+              <li><img src="bower_components/resource_imgs/indexpics/pic2.png" /></li>
+              <li><img src="bower_components/resource_imgs/indexpics/pic3.png" /></li>
+              <li><img src="bower_components/resource_imgs/indexpics/pic4.png" /></li>
+              <li><img src="bower_components/resource_imgs/indexpics/pic5.png" /></li>
+              <li><img src="bower_components/resource_imgs/indexpics/pic6.png" /></li>
+              <li><img src="bower_components/resource_imgs/indexpics/pic7.png" /></li>
+              <li><img src="bower_components/resource_imgs/indexpics/pic8.png" /></li>
+              <li><img src="bower_components/resource_imgs/indexpics/pic9.png" /></li>
+              <li><img src="bower_components/resource_imgs/indexpics/pic10.png" /></li>
+            </ul>
+          </div>
+          <!--设置滚动条-->
+          <div class="slidebar">
+            <div class="bar"></div>
+          </div>
+        </div>
+		<!--主页弹出的作者最近推荐大家值得去关注的几个学习的网站-->
+	</div>
+</body>
