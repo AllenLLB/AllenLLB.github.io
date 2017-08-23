@@ -265,7 +265,7 @@ html,body {
 	height: 100%;
 	text-align: center;
 	cursor: pointer;
-	font-size: 14px;
+	font-size: 12px;
 }
 #tips .navs li:hover{
 	color: #0F8CC1;
