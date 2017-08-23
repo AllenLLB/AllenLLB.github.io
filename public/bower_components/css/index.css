@@ -322,6 +322,7 @@ html,body {
 #tips-container .IT li a,
 #tips-container .sport li a,
 #tips-container .game li a{
+	font-size: 12px;
 	color: rgb(8,136,185);
 }
 
